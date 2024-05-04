@@ -1,4 +1,4 @@
-import styles from './Main.module.css';
+import styles from './styles.module.css';
 
 
 import { AppRoutes } from '../../routes';

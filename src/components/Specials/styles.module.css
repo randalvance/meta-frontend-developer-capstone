@@ -1,0 +1,6 @@
+.specials {
+    background-color: green;
+    width: var(--body-width);
+    margin: 10px auto;
+    height: 300px;
+}

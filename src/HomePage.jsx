@@ -1,3 +1,11 @@
+import { CallToAction } from './components/CallToAction'
+import { Specials } from './components/Specials';
+
 export default function HomePage() {
-    return <h1>Home Page 2</h1>
+    return (
+        <>
+            <CallToAction />
+            <Specials />
+        </>
+    )
 }

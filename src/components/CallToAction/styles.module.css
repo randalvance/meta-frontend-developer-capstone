@@ -1,0 +1,32 @@
+.cta {
+    height: 250px;
+    background: var(--color-primary-01);
+    margin-bottom: 80px;
+}
+
+.innerContent {
+    display: flex;
+    justify-content: space-between;
+    width: var(--body-width);
+    margin: 0 auto;
+}
+
+.upper {
+    padding: 20px;
+    width: 300px;
+}
+
+.upper h1, .upper h2 {
+    margin-bottom: 10px;
+}
+
+.upper p {
+    margin: 20px 0 10px 0;
+}
+
+.restaurantFood {
+    border-radius: 20px;
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+}
