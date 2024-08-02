@@ -2,7 +2,9 @@ import { useEffect, useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BookingForm } from './components/BookingForm';
 import { fetchAPI, submitAPI  } from '../../api/api';
+import styles from './BookingPage.module.css';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const initialState = {
     availableTimes: [],
 };
@@ -26,7 +28,7 @@ export default function BookingPage() {
     }, []);
 
     return (
-        <div>
+        <div className={styles.pageContainer}>
             <BookingForm state={state} dispatch={dispatch} onSubmit={(formData) => {
                 submitAPI(formData);
                 navigate('/booking-confirmed');

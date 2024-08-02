@@ -1,6 +1,5 @@
 :root {
-    --font-family-01: 'Makazi Text', serif;
-    --font-family-02: 'Karla', sans-serif;
+    --font-family-01: 'Verdana', serif;
 
     --color-primary-01: #495E57;
     --color-primary-02: #F4CE14;
@@ -10,6 +9,10 @@
     --color-secondary-04: #333333;
     --color-text: #000000;
     --color-text-inverse: #ffffff;
+}
+
+body {
+    font-family: var(--font-family-01);
 }
 
 h1, h2 {
