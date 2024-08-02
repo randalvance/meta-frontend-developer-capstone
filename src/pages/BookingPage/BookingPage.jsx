@@ -11,7 +11,7 @@ const availableTimes = [
     '22:00'
 ];
 
-const initialState = {
+export const initialState = {
     date: new Date(),
     time: '17:00',
     guests: 1,
@@ -38,7 +38,6 @@ export default function BookingPage() {
     const [state, dispatch] = useReducer(reducer, initialState);
     return (
         <div>
-            <h1>Booking Page</h1>
             <BookingForm state={state} dispatch={dispatch} />
         </div>
     );
