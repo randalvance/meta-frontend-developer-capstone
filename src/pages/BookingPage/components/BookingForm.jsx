@@ -44,6 +44,8 @@ export const BookingForm = ({ state, onSubmit }) => {
                                     value={field.state.value}
                                     onChange={(e) => field.handleChange(e.target.value)}
                                     style={{ width: "300px" }}
+                                    aria-labelledby="reservationDate"
+                                    aria-invalid={field.state.meta.errors ? "true" : "false"}
                                 />
                                 {field.state.meta.errors ? (
                                     <p className="error" role="alert">{field.state.meta.errors.join(",")}</p>
@@ -71,6 +73,8 @@ export const BookingForm = ({ state, onSubmit }) => {
                                     required
                                     onChange={(e) => { field.handleChange(e.target.value) }}
                                     style={{ width: "305px" }}
+                                    aria-labelledby="reservationTime"
+                                    aria-invalid={field.state.meta.errors ? "true" : "false"}
                                 >
                                     <option value="">Select a time</option>
                                     {state.availableTimes.map((timeOption) => (
@@ -104,6 +108,8 @@ export const BookingForm = ({ state, onSubmit }) => {
                                     value={field.state.value}
                                     onChange={(e) => { field.handleChange(+e.target.value); }}
                                     style={{ width: "298px" }}
+                                    aria-labelledby="guests"
+                                    aria-invalid={field.state.meta.errors ? "true" : "false"}
                                 />
                                 {field.state.meta.errors ? (
                                     <p className="error" role="alert">{field.state.meta.errors.join(",")}</p>
@@ -131,6 +137,8 @@ export const BookingForm = ({ state, onSubmit }) => {
                                             field.handleChange(e.target.value);
                                         }}
                                         style={{ width: "305px" }}
+                                        aria-labelledby="occasion"
+                                        aria-invalid={field.state.meta.errors ? "true" : "false"}
                                     >
                                         <option value="">Select an occasion</option>
                                         <option value="Birthday">Birthday</option>
