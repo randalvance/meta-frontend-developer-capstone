@@ -1,5 +1,6 @@
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { BookingForm } from './components/BookingForm';
+import { fetchAPI } from '../../api/api';
 
 
 const availableTimes = [
@@ -22,13 +23,19 @@ export const initialState = {
 function reducer(state, action) {
     switch (action.type) {
         case 'SET_DATE':
-            return { ...state, date: new Date(action.payload) };
+            // eslint-disable-next-line no-case-declarations
+            const selectedDate = new Date(action.payload);
+            // eslint-disable-next-line no-case-declarations
+            const availableTimes = fetchAPI(selectedDate);
+            return { ...state, date: new Date(action.payload), availableTimes };
         case 'SET_TIME':
             return { ...state, time: action.payload };
         case 'SET_GUESTS':
             return { ...state, guests: action.payload };
         case 'SET_OCCASION':
             return { ...state, occasion: action.payload };
+        case 'SET_AVAILABLE_TIMES':
+            return { ...state, availableTimes: action.payload };
         default:
             return state;
     }
@@ -36,6 +43,12 @@ function reducer(state, action) {
 
 export default function BookingPage() {
     const [state, dispatch] = useReducer(reducer, initialState);
+
+    useEffect(() => {
+        const availableTimes = fetchAPI(new Date());
+        dispatch({ type: 'SET_AVAILABLE_TIMES', payload: availableTimes });
+    }, []);
+
     return (
         <div>
             <BookingForm state={state} dispatch={dispatch} />
