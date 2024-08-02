@@ -1,15 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import HomePage from './HomePage';
-import BookingPage from './BookingPage';
+import BookingPage from './pages/BookingPage/BookingPage';
 
 export function AppRoutes() {
   return (
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/booking" element={<BookingPage />} />
-        </Routes>
-    </BrowserRouter>
+      <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/booking" element={<BookingPage />} />
+      </Routes>
   );
 }

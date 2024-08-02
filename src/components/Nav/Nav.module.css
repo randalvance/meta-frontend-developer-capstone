@@ -12,12 +12,13 @@
 
 .navbar li a {
   display: block;
-  color: white;
+  color: #111;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .navbar li a:hover {
+  color: white;
   background-color: #111;
 }
