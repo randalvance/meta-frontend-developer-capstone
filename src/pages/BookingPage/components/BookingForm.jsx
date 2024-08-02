@@ -7,11 +7,14 @@ function formatDate(date) {
     return `${year}-${month}-${day}`;
 }
 
-export const BookingForm = ({ state, dispatch }) => {
+export const BookingForm = ({ state, dispatch, onSubmit }) => {
     return (
         <>
             <h1>Book Now</h1>
-            <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
+            <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }} onSubmit={(e) => {
+                e.preventDefault();
+                onSubmit();
+            }}>
                 <label htmlFor="res-date">Choose date</label>
                 <input
                     type="date"
@@ -65,4 +68,5 @@ export const BookingForm = ({ state, dispatch }) => {
 BookingForm.propTypes = {
     state: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired
 };
