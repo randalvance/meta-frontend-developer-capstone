@@ -25,5 +25,8 @@ export const fetchAPI = function(date) {
 };
 // eslint-disable-next-line no-unused-vars
 export const submitAPI = function(formData) {
+    const existingData = JSON.parse(localStorage.getItem('bookings') || "[]");
+    existingData.push(formData);
+    localStorage.setItem('bookings', JSON.stringify(existingData));
     return true;
 };
